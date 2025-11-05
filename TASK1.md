@@ -78,4 +78,34 @@ Note: The Region i am in is us-east-1 (N.Virginia)
     ]
 }
 ```
--
+- In the navigation pane on the left choose **User groups** and choose the name **S3-support** groups.
+- Choose the **Permissions** tab.
+  - The S3-Support group has the AmazonS3ReadOnlyAccess policy attached.
+- Below Policy Name, choose the link for the AmazonS3ReadOnlyAccess policy, and choose the JSON tab.
+  - This policy has permissions to Get and List for all resources in Amazon S3.
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:Get*",
+                "s3:List*",
+                "s3:Describe*",
+                "s3-object-lambda:Get*",
+                "s3-object-lambda:List*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+- In the navigation pane on the left, choose **User groups**, choose the name of the **EC2-Admin** group and choose the **Permissions** tab.
+  - This group is different from the other two. Instead of a managed policy, the group has an inline policy, which is a policy assigned to just one user or group. Inline policies are typically used to apply permissions for specific situations.
+- Below **Policy Name**, choose the name of the **EC2-Admin-Policy** policy, and choose the **JSON** tab.
+  - This policy grants permission to Describe information about Amazon EC2 instances and the ability to Start and Stop instances.
+- At the bottom of the screen, choose Cancel to close the policy, and then choose Continue.
+
+
