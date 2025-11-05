@@ -23,7 +23,52 @@ Note: The Region i am in is us-east-1 (N.Virginia)
    - user-3
 - Choose the name of user-1.
   - This brings me to a summary page for user-1. The **Permissions** tab is displayed.
-  - Note: user-1 is without any permissions.
-  - Note: user-1 is also not a member of any groups.
+  - Note: user-1 is without any permissions, and also not a member of any groups.
 - Choose the **Security Credentials** tab.
  - Notice that user-1 is assigned a **Console password**. This allows the user to access the AWS Management Console.
+ - In the navigation pane on the left choose **User groups**.
+   The following groups had been pre-created.
+   - EC2-Admin
+   - EC2-support
+   - S3-support
+- Choose the **EC2-support** group (this brings me to its summary page)
+- Choose the **Permissions** tab.
+  - This group has a managed policy called **AmazonEC2ReadOnlyAccess** associated with it.
+  - Managed policies are pre-built polices (built by either AWS or Administrators) that can be attached to IAM users and groups.
+  - When the policy is updated, the changes reflect accross all users and groups attached to the policy.
+- Below policy name, choose the **AmazonEC2ReadOnlyAccess** policy.
+-Choose the **JSON** tab.
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "ec2:GetSecurityGroupsForVpc"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "elasticloadbalancing:Describe*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:ListMetrics",
+                "cloudwatch:GetMetricStatistics",
+                "cloudwatch:Describe*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "autoscaling:Describe*",
+            "Resource": "*"
+        }
+    ]
+}
+```
