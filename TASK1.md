@@ -37,7 +37,13 @@ Note: The Region i am in is us-east-1 (N.Virginia)
   - Managed policies are pre-built polices (built by either AWS or Administrators) that can be attached to IAM users and groups.
   - When the policy is updated, the changes reflect accross all users and groups attached to the policy.
 - Below policy name, choose the **AmazonEC2ReadOnlyAccess** policy.
--Choose the **JSON** tab.
+- Choose the **JSON** tab.
+  - A policy defines which actions are allowed or denied for specific AWS resources. This policy is granting permission to List and Describe (view) information about Amazon Elastic Compute Cloud (Amazon EC2), Elastic Load Balancing, Amazon CloudWatch, and Amazon EC2 Auto Scaling. This ability to view resources, but not modify them, is ideal for assigning to a support role.
+  - Statements in an IAM policy have the following basic structure:
+    - **Effect** says whether to Allow or Deny the permissions.
+    - **Action** specifies the API calls that can be made against an AWS service (for example, cloudwatch:ListMetrics).
+    - **Resource** defines the scope of entities covered by the policy rule (for example, a specific Amazon Simple Storage Service [Amazon S3] bucket or Amazon EC2 instance; an asterisk [ * ] means any resource).
+
 ```json
 {
     "Version": "2012-10-17",
@@ -72,3 +78,4 @@ Note: The Region i am in is us-east-1 (N.Virginia)
     ]
 }
 ```
+-
