@@ -22,8 +22,8 @@ Note: The Region i am in is us-east-1 (N.Virginia)
    - user-2
    - user-3
 - Choose the name of user-1.
- - This brings me to a summary page for user-1. The **Permissions** tab is displayed.
- - Note: user-1 is without any permissions.
- - Note: user-1 is also not a member of any groups.
+  - This brings me to a summary page for user-1. The **Permissions** tab is displayed.
+  - Note: user-1 is without any permissions.
+  - Note: user-1 is also not a member of any groups.
 - Choose the **Security Credentials** tab.
  - Notice that user-1 is assigned a **Console password**. This allows the user to access the AWS Management Console.
