@@ -46,11 +46,11 @@ here I test the permissions inherited by IAM users in the console.
   - In the upper-right corner of the page, choose **user-2**.
   - Choose **Sign Out**.
 
-  ## 3.4: Test user-3 permissions
-  - Pasted the sign-in link into the private browser again, and press ENTER.
-  - Sign in with the following credentials:
-    - **IAM user name**: ```user-3```.
-    - **Password**: ```Lab-Password3```.
+## 3.4: Test user-3 permissions
+- Pasted the sign-in link into the private browser again, and press ENTER.
+- Sign in with the following credentials:
+  - **IAM user name**: ```user-3```.
+  - **Password**: ```Lab-Password3```.
 - Choose the **Services menu**, and choose **EC2**.
 - In the navigation pane on the left, choose **Instances**.
   - An EC2 instance is listed. As an Amazon EC2 Administrator, this user should have permissions to Stop the EC2 instance.
